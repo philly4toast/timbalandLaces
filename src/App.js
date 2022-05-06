@@ -5,13 +5,36 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import Button from 'react-bootstrap/Button';
     /*Refactored to below, easier for syntax but might just import entire library */
-import { Button, Alert, Breadcrumb, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Alert, Breadcrumb, Card, Form } from 'react-bootstrap';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       <header className="App-header">
+        <Container>
+        <Form>
+          <Row>
+            <Col md>
+              <Form.Group controlId='formEmail'>
+                <Form.Label>Email Address</Form.Label>
+                <Form.Control type='email' placeholder='example@email.com'/>
+                <Form.Text className='text-muted'>
+                We'll never share your information
+                </Form.Text>
+             </Form.Group>
+            </Col>
+            <Col md>
+              <Form.Group controlId='formPassword'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control type='password' placeholder='Password'/>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Button variant="secondary" type='submit'>Login</Button>
+
+        </Form>
+
         <Card className='mb-3' style={{color: "#000"}}>
           <Card.Img src='https://picsum.photos/200/100' />
           <Card.Body>
@@ -29,6 +52,7 @@ function App() {
         </Breadcrumb>
         <Alert variant='none'>This is a button</Alert>
         <Button>Test Button</Button>
+        </Container>
       </header>
     </div>
   );
